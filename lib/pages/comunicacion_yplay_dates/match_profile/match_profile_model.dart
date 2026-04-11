@@ -14,6 +14,8 @@ class MatchProfileModel extends FlutterFlowModel<MatchProfileWidget> {
           pageViewController!.page != null
       ? pageViewController!.page!.round()
       : 0;
+  // Stores action output result for [Custom Action - startOrFindChat] action in Button widget.
+  DocumentReference? chatRef;
 
   @override
   void initState(BuildContext context) {}

@@ -3,7 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/comunicaciny_play_dates/create_chat/create_chat_widget.dart';
+import '/pages/comunicacion_yplay_dates/create_chat/create_chat_widget.dart';
 import 'dart:async';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +99,7 @@ class _ActiveMatchesChatWidgetState extends State<ActiveMatchesChatWidget> {
           title: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
             child: Text(
-              'Mensajes',
+              'Messages',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     font: GoogleFonts.interTight(
                       fontWeight: FlutterFlowTheme.of(context)
