@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'no_more_pawfiles_widget.dart' show NoMorePawfilesWidget;
+import 'no_more_paws_widget.dart' show NoMorePawsWidget;
 import 'package:flutter/material.dart';
 
-class NoMorePawfilesModel extends FlutterFlowModel<NoMorePawfilesWidget> {
+class NoMorePawsModel extends FlutterFlowModel<NoMorePawsWidget> {
   @override
   void initState(BuildContext context) {}
 
