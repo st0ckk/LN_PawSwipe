@@ -68,12 +68,13 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 80.0,
+                height: MediaQuery.sizeOf(context).height * 0.1,
                 decoration: BoxDecoration(
                   color: Color(0xFFFFD93D),
                 ),
                 child: Row(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
                       padding:
@@ -133,6 +134,7 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                                         .headlineSmall
                                         .fontStyle,
                                   ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ),
@@ -179,25 +181,6 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context
-                              .pushNamed(NotificationSettingsWidget.routeName);
-                        },
-                        child: Icon(
-                          Icons.settings_rounded,
-                          color: Color(0xFF1A1461),
-                          size: 24.0,
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -229,7 +212,9 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                       List<PawfilesRecord> swipeableStackPawfilesRecordList =
                           snapshot.data!;
                       if (swipeableStackPawfilesRecordList.isEmpty) {
-                        return NoMorePawsWidget();
+                        return Center(
+                          child: NoMorePawsWidget(),
+                        );
                       }
 
                       return FlutterFlowSwipeableStack(
@@ -321,6 +306,13 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                                   ParamType.DocumentReference,
                                 ),
                               }.withoutNulls,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.bottomToTop,
+                                ),
+                              },
                             );
                           }
 
