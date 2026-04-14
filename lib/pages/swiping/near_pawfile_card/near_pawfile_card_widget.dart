@@ -221,19 +221,10 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                         final swipeableStackPawfilesRecord =
                             swipeableStackPawfilesRecordList[
                                 swipeableStackIndex];
-
-                        await SwipesRecord.collection
-                            .doc()
-                            .set(createSwipesRecordData(
-                              userRef: currentUserReference,
-                              petRef: swipeableStackPawfilesRecordList[
-                                      swipeableStackIndex]
-                                  .reference,
-                              action: false,
-                            ));
                         await actions.createSwipeIfNotExists(
                           currentUserReference!,
-                          widget.petRef!,
+                          swipeableStackPawfilesRecordList[swipeableStackIndex]
+                              .reference,
                           false,
                         );
                       },
@@ -243,8 +234,9 @@ class _NearPawfileCardWidgetState extends State<NearPawfileCardWidget> {
                                 swipeableStackIndex];
                         await actions.createSwipeIfNotExists(
                           currentUserReference!,
-                          widget.petRef!,
-                          false,
+                          swipeableStackPawfilesRecordList[swipeableStackIndex]
+                              .reference,
+                          true,
                         );
                         _model.isMatch = await actions.checkForMatch(
                           swipeableStackPawfilesRecordList[swipeableStackIndex]
